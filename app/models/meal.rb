@@ -5,4 +5,8 @@ class Meal < ActiveRecord::Base
   
   #belongs_to :user
   has_many :meal_foods, :foreign_key => :meal_id
+  
+  def date
+    self.created_at.to_s.split(" ").first
+  end
 end

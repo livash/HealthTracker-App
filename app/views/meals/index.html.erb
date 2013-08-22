@@ -1,0 +1,17 @@
+<h1>Welcome <%= @user.email %> </h1>
+<div class="meals-index">
+	<table>
+		<tr>
+			<th>Date</th>
+			<th>Meal</th>
+			<th>Foods</th>
+		</tr>
+		<% @meals.each do |meal| %>
+		<tr>
+			<td><%= meal.date %></td>
+			<td><%= meal.title.capitalize %></td>
+			<td><%= meal.meal_foods.map{|food| food.title } %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
