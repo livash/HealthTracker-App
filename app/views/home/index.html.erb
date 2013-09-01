@@ -2,4 +2,8 @@
 <div class="content">
 	<%= button_to "Add new Meal information", new_meal_url, :method => :get%>
 	<%= button_to "See all your meals", meals_url, :method => :get %>
+	<br />
+	<%=  button_to "Add new user here", new_user_registration_url, :method => :get %><br />
+	<%= button_to "Login", new_user_session_url, :method => :get %>
+	<%= button_to "LogOut", destroy_user_session_url, :method => :delete %>
 </div>
