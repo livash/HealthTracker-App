@@ -24,7 +24,7 @@ class MealsController < ApplicationController
     @meal = Meal.new(params[:meal])
     @meal.user_id = current_user.id
     @meal.save!
-    if params[:feeling][:description].length > 1
+    if params[:feeling] and params[:feeling][:description].length > 1
       @feeling = Feeling.new(params[:feeling])
       @feeling.meal_id = @meal.id
       @feeling.save!
