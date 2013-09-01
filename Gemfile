@@ -4,8 +4,10 @@ gem 'rails', '3.2.13'
 gem 'debugger'
 gem 'devise'
 gem 'jquery-rails'
+gem 'jquery-ui-rails'
 gem "aws-sdk"
 gem "pg"
+gem "underscore-rails"
 
 
 

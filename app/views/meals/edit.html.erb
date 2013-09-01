@@ -1,0 +1,14 @@
+<form action="<%= meal_url(@meal) %>" method="post">
+	<%#= render :partial => "meal_form", :locals => {meal: @meal} %>
+	<input type="hidden" name="_method" value="put">
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+	<label for="meal-title">Meal type:</label>
+	<input type="text" name="meal[title]" value="<%= @meal.title %>" id="meal-title"></input>
+	<br>
+	<label for="meal-date">Date:</label>
+	<input type="date" name="meal[date]" value="<%= @meal.date %>" id="meal-date"></input>
+	<br>
+	<label for="meal-description">Description:</label><br>
+	<textarea id="meal-description" name="meal[description]"><%= @meal.description %></textarea>
+	<p><input type="submit" value="Submit" class="btn-large"></p>
+</form>

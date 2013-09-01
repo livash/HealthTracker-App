@@ -1,16 +1,24 @@
 <h1>Welcome <%= @user.email %> </h1>
+<%= button_to "Add new meal", new_meal_url, :method => :get %>
 <div class="meals-index">
 	<table>
 		<tr>
 			<th>Date</th>
 			<th>Meal</th>
-			<th>Foods</th>
+			<!-- <th>Foods</th> -->
+			<th>Description</th>
+			<th>Feelings</th>
+			<th></th>
 		</tr>
 		<% @meals.each do |meal| %>
 		<tr>
-			<td><%= meal.date %></td>
+			<td><%= meal.meal_date %></td>
 			<td><%= meal.title.capitalize %></td>
-			<td><%= meal.meal_foods.map{|food| food.title } %></td>
+			<!-- <td><%#= meal.meal_foods.map{|food| food.title } %></td> -->
+			<td><%= meal.description %></td>
+			<td><%= meal.feeling.description if meal.feeling %></td>
+			<td><%= button_to "Update", edit_meal_url(meal), :method => :get %></td>
+			<td><%= button_to "Delete", meal_url(meal), :method => :delete %></td>
 		</tr>
 		<% end %>
 	</table>

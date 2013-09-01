@@ -4,4 +4,5 @@ class MealFood < ActiveRecord::Base
   validates :title, :presence => true
   
   belongs_to :meal, :foreign_key => :meal_id
+  has_one :user, :through => :meal
 end
